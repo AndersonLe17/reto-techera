@@ -29,6 +29,7 @@ public class CursoDAO {
         registry.put("id_tecnologia",curso.getId_tecnologia());
         registry.put("nombre",curso.getNombre());
         registry.put("descripcion",curso.getDescripcion());
+        if (curso.getId_curso() != null){ registry.put("id_curso",curso.getId_curso()); }
         try {
             db.insertOrThrow(Constantes.TBL_CURSO,null,registry);
         } catch (SQLException e) {

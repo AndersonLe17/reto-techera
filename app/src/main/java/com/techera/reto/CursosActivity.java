@@ -43,6 +43,8 @@ public class CursosActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void initUI() {
+        setTitle("");
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         iIdCurso = (TextInputLayout) findViewById(R.id.iIdCurso);
         editIdCurso = (EditText) findViewById(R.id.editIdCurso);
         iNombre = (TextInputLayout) findViewById(R.id.iNombre);
@@ -64,15 +66,15 @@ public class CursosActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void registrarCurso(View view) {
+        Integer id_curso = (iIdCurso.getEditText().getText().toString().isEmpty())?null:Integer.parseInt(iIdCurso.getEditText().getText().toString());
         String nombre = iNombre.getEditText().getText().toString();
         String descripcion = iDescripcion.getEditText().getText().toString();
         Integer id_tecnologia = Integer.parseInt(iTecnologia.getText().toString().split("-")[0]);
         String response;
 
         if (btnRegister.getText().toString().equals("Registrar")){
-            response = cursoDAO.insert(new Curso(id_tecnologia,nombre,descripcion));
+            response = cursoDAO.insert(new Curso(id_curso,id_tecnologia,nombre,descripcion));
         } else {
-            Integer id_curso = Integer.parseInt(iIdCurso.getEditText().getText().toString());
             response = cursoDAO.update(new Curso(id_curso,id_tecnologia,nombre,descripcion));
         }
         String estado = (btnRegister.getText().toString().equals("Registrar"))?"Registrado":"Modificado";
@@ -81,8 +83,11 @@ public class CursosActivity extends AppCompatActivity implements AdapterView.OnI
                     .setBackgroundTint(getColor(R.color.green))
                     .show();
             cargarItems();
+            limpiarCampos();
         } else {
-            Log.i("INFOX",response);
+            Snackbar.make(view,response, BaseTransientBottomBar.LENGTH_LONG)
+                    .setBackgroundTint(getColor(R.color.red))
+                    .show();
         }
     }
 
@@ -92,6 +97,7 @@ public class CursosActivity extends AppCompatActivity implements AdapterView.OnI
         if (response == null) {
             Toast.makeText(this, "Curso N°"+id_curso+" Eliminado", Toast.LENGTH_LONG).show();
             cargarItems();
+            limpiarCampos();
             btnRegister.setText("Registrar");
             btnEliminar.setEnabled(false);
         } else {
@@ -158,4 +164,16 @@ public class CursosActivity extends AppCompatActivity implements AdapterView.OnI
         }
     }
 
+    private void limpiarCampos() {
+        iIdCurso.getEditText().setText("");
+        iNombre.getEditText().setText("");
+        iTecnologia.setText(null,false);
+        iDescripcion.getEditText().setText("");
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 }
