@@ -16,11 +16,10 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
-import com.techera.reto.dao.CursoDAO;
-import com.techera.reto.dao.TecnologiaDAO;
-import com.techera.reto.dao.UsuarioDAO;
-import com.techera.reto.dto.Curso;
-import com.techera.reto.dto.Tecnologia;
+import com.techera.reto.sqlite.dao.CursoDAO;
+import com.techera.reto.sqlite.dao.TecnologiaDAO;
+import com.techera.reto.sqlite.dto.Curso;
+import com.techera.reto.sqlite.dto.Tecnologia;
 
 import java.util.List;
 

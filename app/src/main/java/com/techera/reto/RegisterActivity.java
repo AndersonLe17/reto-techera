@@ -17,8 +17,8 @@ import android.widget.ImageButton;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
-import com.techera.reto.dao.UsuarioDAO;
-import com.techera.reto.dto.Usuario;
+import com.techera.reto.sqlite.dao.UsuarioDAO;
+import com.techera.reto.sqlite.dto.Usuario;
 
 import java.util.Arrays;
 import java.util.List;

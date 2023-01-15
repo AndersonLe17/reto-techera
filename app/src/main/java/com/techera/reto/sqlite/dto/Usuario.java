@@ -1,4 +1,4 @@
-package com.techera.reto.dto;
+package com.techera.reto.sqlite.dto;
 
 public class Usuario {
     private Integer id_usuario;

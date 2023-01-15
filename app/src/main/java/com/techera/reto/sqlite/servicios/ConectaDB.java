@@ -1,4 +1,4 @@
-package com.techera.reto.servicios;
+package com.techera.reto.sqlite.servicios;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.techera.reto.constantes.Constantes;
+import com.techera.reto.sqlite.constantes.Constantes;
 
 public class ConectaDB extends SQLiteOpenHelper {
 

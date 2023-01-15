@@ -13,13 +13,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.techera.reto.dao.UsuarioDAO;
-import com.techera.reto.dto.Usuario;
+import com.techera.reto.sqlite.dao.UsuarioDAO;
+import com.techera.reto.sqlite.dto.Usuario;
 
 public class MenuActivity extends AppCompatActivity {
     // Componentes
     private TextView tUsuario;
-    private Button btnCursos;
+    private Button btnCursos, btnPosts;
     // DAO
     private UsuarioDAO usuarioDAO;
     private Usuario usuario;
@@ -38,17 +38,24 @@ public class MenuActivity extends AppCompatActivity {
     private void initUI() {
         setTitle("");
         tUsuario = (TextView) findViewById(R.id.tUsuario);
-        btnCursos = (Button) findViewById(R.id.btnCursos); 
+        btnCursos = (Button) findViewById(R.id.btnCursos);
+        btnPosts = (Button) findViewById(R.id.btnPosts);
         usuarioDAO = new UsuarioDAO(this);
 
         cargarPreferencias();
         tUsuario.setText(usuario.getNombre());
 
         btnCursos.setOnClickListener(view -> openCourses());
+        btnPosts.setOnClickListener(view -> openPosts());
     }
 
     private void openCourses() {
         Intent intent = new Intent(MenuActivity.this, CursosActivity.class);
+        startActivity(intent);
+    }
+
+    private void openPosts() {
+        Intent intent = new Intent(MenuActivity.this, PostsActivity.class);
         startActivity(intent);
     }
 
@@ -81,6 +88,9 @@ public class MenuActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.mCursos:
                 openCourses();
+                break;
+            case R.id.mPosts:
+                openPosts();
                 break;
             case R.id.mSalir:
                 closeSession();

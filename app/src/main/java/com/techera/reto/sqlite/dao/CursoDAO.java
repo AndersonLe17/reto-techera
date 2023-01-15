@@ -1,4 +1,4 @@
-package com.techera.reto.dao;
+package com.techera.reto.sqlite.dao;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -7,10 +7,10 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.techera.reto.constantes.Constantes;
-import com.techera.reto.dto.Curso;
-import com.techera.reto.dto.Tecnologia;
-import com.techera.reto.servicios.ConectaDB;
+import com.techera.reto.sqlite.constantes.Constantes;
+import com.techera.reto.sqlite.dto.Curso;
+import com.techera.reto.sqlite.dto.Tecnologia;
+import com.techera.reto.sqlite.servicios.ConectaDB;
 
 import java.util.ArrayList;
 import java.util.List;

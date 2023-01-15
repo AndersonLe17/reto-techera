@@ -1,4 +1,4 @@
-package com.techera.reto.constantes;
+package com.techera.reto.sqlite.constantes;
 
 public interface Constantes {
     String BDD = "techera.db";

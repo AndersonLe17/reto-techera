@@ -12,13 +12,12 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
-import com.techera.reto.dao.UsuarioDAO;
-import com.techera.reto.dto.Usuario;
+import com.techera.reto.sqlite.dao.UsuarioDAO;
+import com.techera.reto.sqlite.dto.Usuario;
 
 public class MainActivity extends AppCompatActivity {
     // Componentes

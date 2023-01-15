@@ -37,11 +37,32 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/techera" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SQLITE"
+        android:gravity="center"/>
+
     <Button
         android:id="@+id/btnCursos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cursos"
+        android:inputType="textCapCharacters" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RETROFIT"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btnPosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Posts"
         android:inputType="textCapCharacters" />
 
 </LinearLayout>
